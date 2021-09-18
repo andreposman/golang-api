@@ -25,7 +25,6 @@ func GetData(c *gin.Context) (*model.Location, error ){
 		return nil, errors.New("OrderID " + orderID + " not found")
 	}
 
-
 	return &locations, nil
 }
 
@@ -41,7 +40,7 @@ func PutData(c *gin.Context) error{
 		return errors.New("Error in PUT")
 	}
 
-	fmt.Println(history)
+	locations.History = append(locations.History, history)
 	fmt.Println("New Locations: ", locations)
 
 	return nil

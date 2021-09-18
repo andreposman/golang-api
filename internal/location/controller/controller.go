@@ -8,7 +8,6 @@ import (
 
 
 func Get(c *gin.Context) {
-
 	data, err := service.GetData(c)
 	if err != nil {
 		c.JSON(http.StatusNotFound, gin.H{"message": err.Error()})
