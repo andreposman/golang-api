@@ -1,6 +1,8 @@
 Location History Server
 =======================
 
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/6dac94b2a7936669d284?action=collection%2Fimport)
+
 ## Task Description
 
 Your task is to implement a toy in-memory location history server.
