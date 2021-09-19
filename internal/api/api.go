@@ -10,8 +10,11 @@ import (
 func InitAPI() {
 	router := gin.Default()
 	envConfig := config.GetConfig()
+	if envConfig.ServerPort == "" {
+		envConfig.ServerPort = "8080"
+	}
 
-	log.Info("ENV CONFIG PORTS:", envConfig)
+	log.Infof("ENV VARS: HISTORY_SERVER_LISTEN_ADDR: %s  |  FALLBACK_HISTORY_SERVER_LISTEN_ADDR: %s, ", envConfig.ServerPort,envConfig.FallbackServerPort)
 
 	api := router.Group("/location")
 		api.GET("/:order_id", controller.Get)
@@ -20,7 +23,7 @@ func InitAPI() {
 
 	err := router.Run(":" + envConfig.ServerPort)
 	if err != nil {
-		router.Run(":" + envConfig.BackupServerPort)
+		router.Run(":" + envConfig.FallbackServerPort)
 	}
 
 }

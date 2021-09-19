@@ -2,12 +2,13 @@ package config
 
 import (
 	"fmt"
+	log "github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 )
 
 type Environment struct {
-	ServerPort string
-	BackupServerPort string
+	ServerPort         string
+	FallbackServerPort string
 }
 
 
@@ -17,8 +18,8 @@ func GetConfig() Environment {
 	viper.SetConfigType("yml")
 	viper.AddConfigPath(".")
 	err := viper.ReadInConfig()
-	if err != nil { // Handle errors reading the config file
-		panic(fmt.Errorf("Fatal error config file: %w \n", err))
+	if err != nil {
+		log.Error("Fatal error config file: %w \n", err)
 	}
 
 	err2 := viper.Unmarshal(&configuration)
@@ -27,7 +28,7 @@ func GetConfig() Environment {
 	}
 
 	configuration.ServerPort = viper.GetString("HISTORY_SERVER_LISTEN_ADDR")
-	configuration.BackupServerPort = viper.GetString("BACKUP_HISTORY_SERVER_LISTEN_ADDR")
+	configuration.FallbackServerPort = viper.GetString("FALLBACK_HISTORY_SERVER_LISTEN_ADDR")
 
 	return configuration
 }
