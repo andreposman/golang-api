@@ -1,7 +1,7 @@
 Location History Server
 =======================
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/6dac94b2a7936669d284?action=collection%2Fimport)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/15347805-de12a614-c6e4-440b-9454-7cc0003071ff?action=collection%2Ffork&collection-url=entityId%3D15347805-de12a614-c6e4-440b-9454-7cc0003071ff%26entityType%3Dcollection%26workspaceId%3D9cbff614-cfb9-46f6-ae1f-e70f403d7165)
 
 ## Task Description
 
