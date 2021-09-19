@@ -5,17 +5,17 @@ import (
 	"github.com/spf13/viper"
 )
 
-type Enviroment struct {
+type Environment struct {
 	ServerPort string
 	BackupServerPort string
 }
 
 
-func GetConfig() Enviroment {
-	var configuration Enviroment
+func GetConfig() Environment {
+	var configuration Environment
 	viper.SetConfigName("config")
 	viper.SetConfigType("yml")
-	viper.AddConfigPath("./internal/config/")
+	viper.AddConfigPath(".")
 	err := viper.ReadInConfig()
 	if err != nil { // Handle errors reading the config file
 		panic(fmt.Errorf("Fatal error config file: %w \n", err))

@@ -7,7 +7,6 @@ import (
 	"net/http"
 )
 
-
 func Get(c *gin.Context) {
 	log.Info("GET REQUEST MADE TO: /location/{order_id}?max=<N>")
 

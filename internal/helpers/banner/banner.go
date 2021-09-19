@@ -14,7 +14,7 @@ func GreetingBanner(){
 ██║     ███████╗██║██║ ╚████║██║  ██╗
 ╚═╝     ╚══════╝╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝
 Author: André de Fazzio Posman
-Github: github.com/andreposman/golang-api
+Github: https://www.github.com/andreposman/golang-api
 
 Please review with love :)
 =============================================================================
