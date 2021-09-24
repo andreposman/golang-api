@@ -6,6 +6,6 @@ type Location struct {
 }
 
 type History struct {
-	Lat string `json:lat`
-	Lng string `json:lng`
+	Lat float64 `json:"lat""`
+	Lng float64 `json:"lng"`
 }
